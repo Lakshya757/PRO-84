@@ -6,26 +6,27 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 export default class PostCard extends React.Component{
     render(){
         return(
-            <View>
-                <View>
+            <View style={styles.container}>
+                <View style={styles.cardContainer}>
                     <View>
                         <View>
                             <Image
                                 source={require('../assets/profile_img.png')}
+                                style={styles.postImage}
                             ></Image>
                         </View>
                         <View>
-                            <Text>{this.props.post.author}</Text>
+                            <Text style={styles.postAuthorText}>{this.props.post.author}</Text>
                         </View>
                     </View>
                     <Image source={require('../assets/post.jpeg')} />
                     <View>
-                        <Text>{this.props.post.caption}</Text>
+                        <Text style={styles.captionText}>{this.props.post.caption}</Text>
                     </View>
-                    <View>
-                        <View>
+                    <View style={styles.actionContainer}>
+                        <View style={styles.likeButton}>
                             <Ionicons name={'heart'} size={RFValue(30)} color={'white'}/>
-                            <Text>15k</Text>
+                            <Text style={styles.likeText}>15k</Text>
                         </View>
                     </View>
                 </View>
@@ -43,25 +44,17 @@ const styles = StyleSheet.create({
       backgroundColor: "#2f345d",
       borderRadius: RFValue(20)
     },
-    storyImage: {
+    postImage: {
       resizeMode: "contain",
       width: "95%",
       alignSelf: "center",
       height: RFValue(250)
     },
-    titleContainer: {
-      paddingLeft: RFValue(20),
-      justifyContent: "center"
-    },
-    storyTitleText: {
-      fontSize: RFValue(25),
-      color: "white"
-    },
-    storyAuthorText: {
+    postAuthorText: {
       fontSize: RFValue(18),
       color: "white"
     },
-    descriptionText: {
+    captionText: {
       fontSize: 13,
       color: "white",
       paddingTop: RFValue(10)

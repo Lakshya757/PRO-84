@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
 import { View, Text, StyleSheet, Platform, StatusBar, SafeAreaView, Image, FlatList } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize';
+
 import PostCard from './PostCard'
 
 let posts = require('../screens/temp_posts.json')
 
 export default class Feed extends Component{
 
-    renderItem =({item:post })=>{
-        <PostCard post={post} />
+    renderItem =({item: currentPost })=>{
+        <PostCard post={currentPost} />
     }
 
     keyExtractor = (item, index)=> index.toString()
@@ -30,9 +31,9 @@ export default class Feed extends Component{
                 </View>
                 <View style={styles.cardContainer}>
                     <FlatList
-                        keyExtractor={this.keyExtractor}
-                        data={posts}
-                        renderItem={this.renderItem}
+                      keyExtractor={this.keyExtractor}
+                      data={posts}
+                      renderItem={this.renderItem}
                     />
                 </View>
             </View>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         color:'white',
         fontSize: RFValue(28),
         alignSelf:'center',
-        paddingRight: '17%'
+        paddingRight: '20%'
     },
     cardContainer:{
       flex:0.85
