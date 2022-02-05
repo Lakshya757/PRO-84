@@ -43,7 +43,7 @@ const TabNavigator = () =>{
 
 const styles = StyleSheet.create({
     bottomTabStyle:{
-      backgroundColor: "#2C284C",
+      backgroundColor: "#4A4576",
       height: "8%",
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,

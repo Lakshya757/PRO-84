@@ -1,14 +1,17 @@
 import React,{Component} from 'react';
 import { View, Text, StyleSheet, Platform, StatusBar, SafeAreaView, Image, FlatList } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize';
+import PostCard from './PostCard'
 
 let posts = require('../screens/temp_posts.json')
 
 export default class Feed extends Component{
 
     renderItem =({item:post })=>{
-
+        <PostCard post={post} />
     }
+
+    keyExtractor = (item, index)=> index.toString()
 
     render(){
         return(
@@ -18,6 +21,7 @@ export default class Feed extends Component{
                     <View style={styles.appIcon}>
                         <Image
                             source={require('../assets/logo.png')}
+                            style={styles.iconImage}
                         ></Image>
                     </View>
                     <View style={styles.appTitleTextContainer}>
@@ -39,7 +43,7 @@ export default class Feed extends Component{
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor:'black'
+        backgroundColor:'#2C284C'
     },
     droidSafeArea:{
         marginTop: Platform.OS == 'android' ? StatusBar.currentHeight : RFValue(35)
@@ -51,12 +55,13 @@ const styles = StyleSheet.create({
     appIcon:{
         flex: 0.2,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems:'center',
+        paddingLeft: '7%'
     },
     iconImage:{
         width:'100%',
         height:'100%',
-        resizeMode:'contain'
+        resizeMode:'contain',
     },
     appTitleTextContainer:{
        flex: 0.8,
@@ -64,9 +69,11 @@ const styles = StyleSheet.create({
     },
     appTitleText:{
         color:'white',
-        fontSize: RFValue(28)
+        fontSize: RFValue(28),
+        alignSelf:'center',
+        paddingRight: '17%'
     },
     cardContainer:{
-        flex:0.85
+      flex:0.85
     }
 })

@@ -33,3 +33,57 @@ export default class PostCard extends React.Component{
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1
+    },
+    cardContainer: {
+      margin: RFValue(13),
+      backgroundColor: "#2f345d",
+      borderRadius: RFValue(20)
+    },
+    storyImage: {
+      resizeMode: "contain",
+      width: "95%",
+      alignSelf: "center",
+      height: RFValue(250)
+    },
+    titleContainer: {
+      paddingLeft: RFValue(20),
+      justifyContent: "center"
+    },
+    storyTitleText: {
+      fontSize: RFValue(25),
+      color: "white"
+    },
+    storyAuthorText: {
+      fontSize: RFValue(18),
+      color: "white"
+    },
+    descriptionText: {
+      fontSize: 13,
+      color: "white",
+      paddingTop: RFValue(10)
+    },
+    actionContainer: {
+      justifyContent: "center",
+      alignItems: "center",
+      padding: RFValue(10)
+    },
+    likeButton: {
+      width: RFValue(160),
+      height: RFValue(40),
+      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "row",
+      backgroundColor: "#eb3948",
+      borderRadius: RFValue(30)
+    },
+    likeText: {
+      color: "white",
+      fontSize: RFValue(25),
+      marginLeft: RFValue(5)
+    }
+  });
+  
