@@ -9,7 +9,7 @@ let posts = require('../screens/temp_posts.json')
 export default class Feed extends Component{
 
     renderItem =({item: currentPost })=>{
-        <PostCard post={currentPost} />
+        <PostCard post={currentPost} navigation={this.props.navigation} />
     }
 
     keyExtractor = (item, index)=> index.toString()
